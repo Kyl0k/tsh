@@ -18,7 +18,7 @@ class MovieController {
     const parsedDuration = parseInt(duration);
     const convertedGenres = convertGenres(genres);
     let movies = {};
-    if (!isNaN(parsedDuration) && !genres) {
+    if (!isNaN(parsedDuration) && convertedGenres.length === 0) {
       movies = await this.movieService.getRandomMovie({
         duration: parsedDuration,
       });
